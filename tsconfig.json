@@ -1,0 +1,4 @@
+{
+  "references": [{ "path": "./next-app" }],
+  "exclude": ["**/node_modules"]
+}
