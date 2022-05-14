@@ -1,0 +1,9 @@
+.grid,
+.header {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+}
+
+.header {
+  padding: 10px;
+}
