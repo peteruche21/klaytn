@@ -2,6 +2,7 @@ import React, { FC, ReactNode } from "react";
 import { connect, initWallet, switchChain } from "../../lib/auth";
 import { getConfig } from "../../lib/config";
 import globalState from "../../state";
+import { formatAddress, WalletSeed } from "../../utils";
 
 interface ILayoutNode {
   children?: ReactNode;
@@ -9,7 +10,7 @@ interface ILayoutNode {
 
 const Layout: FC<ILayoutNode> = ({ children }) => {
   const state = globalState((state) => state);
-  const handleClick = async () => {
+  const connectWallet = async () => {
     if (state.isConnected) return;
     await connect();
     initWallet(state);
@@ -48,9 +49,26 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
                 focus:ring-4 focus:outline-none focus:ring-[#94e1e4] 
                 font-medium rounded-lg  
                 px-5 py-2.5  mr-3 md:mr-0"
-                onClick={handleSwitch() ? switchChain : handleClick}
+                onClick={
+                  state.isConnected
+                    ? handleSwitch()
+                      ? switchChain
+                      : () => {}
+                    : connectWallet
+                }
               >
-                {handleSwitch() ? "Switch Network" : "Connect Wallet"}
+                {state.isConnected ? (
+                  handleSwitch() ? (
+                    "Switch Network"
+                  ) : (
+                    <div className="inline-flex gap-3">
+                      {formatAddress(state.address as string)}
+                      {WalletSeed(state.address as string)}
+                    </div>
+                  )
+                ) : (
+                  "Connect Wallet"
+                )}
               </button>
             </div>
           </div>
