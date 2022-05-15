@@ -1,10 +1,25 @@
 import React, { FC, ReactNode } from "react";
+import { connect, initWallet, switchChain } from "../../lib/auth";
+import { getConfig } from "../../lib/config";
+import globalState from "../../state";
 
 interface ILayoutNode {
   children?: ReactNode;
 }
 
 const Layout: FC<ILayoutNode> = ({ children }) => {
+  const state = globalState((state) => state);
+  const handleClick = async () => {
+    if (state.isConnected) return;
+    await connect();
+    initWallet(state);
+  };
+  const handleSwitch = () => {
+    return (
+      state.isConnected &&
+      state.activeChain !== getConfig("testnet").hexChainId?.toLowerCase()
+    );
+  };
   const renderHeader = (): JSX.Element => {
     return (
       <nav
@@ -33,8 +48,9 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
                 focus:ring-4 focus:outline-none focus:ring-[#94e1e4] 
                 font-medium rounded-lg  
                 px-5 py-2.5  mr-3 md:mr-0"
+                onClick={handleSwitch() ? switchChain : handleClick}
               >
-                Connect Wallet
+                {handleSwitch() ? "Switch Network" : "Connect Wallet"}
               </button>
             </div>
           </div>

@@ -1,18 +1,18 @@
+import { IGlobalState } from "../state";
 import caver from "./caver";
 import { getConfig } from "./config";
 
-const { ethereum } = window;
-const { networkName, chainId, httpRPCEndpoint, explorer } =
+const ethereum = typeof window !== "undefined" ? window.ethereum : null;
+
+const { networkName, hexChainId, httpRPCEndpoint, explorer } =
   getConfig("testnet");
 
-export const connect = async (globalState) => {
-  if (!(typeof ethereum !== "undefined")) return;
+export const connect = async () => {
+  if (typeof ethereum === "undefined") return;
   try {
     const accounts = await ethereum.request({
       method: "eth_requestAccounts",
     });
-    if (!accounts) return;
-    globalState.setAddress(accounts[0]);
   } catch (error) {
     console.log(error);
   }
@@ -22,9 +22,9 @@ export const addChain = async () => {
     method: "wallet_addEthereumChain",
     params: [
       {
-        chainId: chainId,
+        chainId: hexChainId,
         chainName: networkName,
-        rpcUrls: [httpRPCEndpoint],
+        rpcUrls: [httpRPCEndpoint[0]],
         nativeCurrency: {
           name: networkName,
           symbol: "KLAY",
@@ -37,14 +37,15 @@ export const addChain = async () => {
 };
 
 export const switchChain = async () => {
-  if (!(typeof ethereum !== "undefined")) return;
+  if (typeof ethereum === "undefined") return;
   try {
     await ethereum.request({
       method: "wallet_switchEthereumChain",
-      params: [{ chainId: chainId }],
+      params: [{ chainId: hexChainId }],
     });
   } catch (error) {
     if ((error as { [key: string]: unknown }).code === 4902) {
+      console.log("reached");
       addChain();
     } else {
       alert(
@@ -53,13 +54,14 @@ export const switchChain = async () => {
     }
   }
 };
-const initWallet = async (globalState) => {
-  if (!(typeof ethereum !== "undefined")) return;
+export const initWallet = async (globalState: IGlobalState) => {
+  if (typeof ethereum === "undefined") return;
   const accounts = await ethereum.request({ method: "eth_accounts" });
-  if (!accounts) return;
+  if (accounts.length === 0) return;
   globalState.setAddress(accounts[0]);
   const chainId = await ethereum.request({ method: "eth_chainId" });
   globalState.setActiveChain(chainId);
+  globalState.setIsConnected(true);
   const handleChainChanged = () => {
     window.location.reload();
   };

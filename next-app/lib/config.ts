@@ -1,9 +1,10 @@
 interface IConfig {
   networkName: string;
   chainId: string;
-  httpRPCEndpoint: string;
+  hexChainId?: string;
+  httpRPCEndpoint: string | string[];
   wssRPCEndpoint?: string;
-  walletUrl: string;
+  walletUrl?: string;
   explorer: string;
 }
 
@@ -15,7 +16,8 @@ export function getConfig(env: env): IConfig {
     case "mainnet":
       return {
         networkName: "Klaytn Cypress",
-        chainId: "0x8217",
+        chainId: "8217",
+        hexChainId: "0x2019",
         httpRPCEndpoint: "https://public-node-api.klaytnapi.com/v1/cypress",
         wssRPCEndpoint: "wss://public-node-api.klaytnapi.com/v1/cypress/ws",
         walletUrl: "https://wallet.klaytn.com/",
@@ -24,9 +26,13 @@ export function getConfig(env: env): IConfig {
     case "development":
     case "testnet":
       return {
-        networkName: "Klaytn Baobab",
-        chainId: "0x1001",
-        httpRPCEndpoint: "https://public-node-api.klaytnapi.com/v1/baobab",
+        networkName: "Klaytn Testnet Baobab",
+        chainId: "1001",
+        hexChainId: "0x3E9",
+        httpRPCEndpoint: [
+          "https://api.baobab.klaytn.net:8651",
+          "https://public-node-api.klaytnapi.com/v1/baobab",
+        ],
         wssRPCEndpoint: "wss://public-node-api.klaytnapi.com/v1/baobab/ws",
         walletUrl: "https://baobab.wallet.klaytn.foundation/",
         explorer: "https://baobab.scope.klaytn.com/",
@@ -36,7 +42,6 @@ export function getConfig(env: env): IConfig {
         networkName: "localhost",
         chainId: process.env.KLAYTN_CHIANID_LOCAL || "local",
         httpRPCEndpoint: process.env.KLAYTN_NODE_URL || "http://localhost:8080",
-        walletUrl: "",
         explorer: "",
       };
     default:
