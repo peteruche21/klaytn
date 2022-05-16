@@ -4,7 +4,6 @@ import { getConfig } from "../../lib/config";
 import globalState from "../../state";
 import { formatAddress, WalletSeed } from "../../utils";
 import SideNavigation from "./sider";
-import styles from "../../styles/Home.module.css";
 
 interface ILayoutNode {
   children?: ReactNode;
@@ -64,8 +63,12 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
                     "Switch Network"
                   ) : (
                     <div className="inline-flex gap-3">
-                      {formatAddress(state.address as string)}
-                      {WalletSeed(state.address as string)}
+                      <div className="m-auto">
+                        {formatAddress(state.address as string)}
+                      </div>
+                      <div className="rounded-md border-green-500 border-2">
+                        {WalletSeed(state.address as string)}
+                      </div>
                     </div>
                   )
                 ) : (
@@ -85,12 +88,7 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
         <div className="col-span-1">
           <SideNavigation />
         </div>
-        <div className="col-span-5">
-          {children}
-          <footer className={styles.footer}>
-            <p>acend 2022</p>
-          </footer>
-        </div>
+        <div className="col-span-5">{children}</div>
       </div>
     </>
   );
