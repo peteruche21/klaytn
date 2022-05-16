@@ -5,13 +5,16 @@ import style from "./Card.module.css";
 import NftDetails from "../NftDetails";
 
 import girlNft from "../../assets/images/girl-nft.svg";
+
 function Card(props) {
   const { channel, name, price, bold, img } = props;
   return (
-    <div className="max-w-[276px] mx-1 mb-12">
-      <Image src={girlNft} />
+    <div className="w-full max-w-[276px] mx-1 mb-12">
+      <div className="block min-w-max h-[300px] m-auto">
+        <Image src={girlNft} />
+      </div>
       <NftDetails name="Two teeth social club" price="price" />
-      <NftDetails bold name="Red Ape" price="0.09" img={girlNft} />
+      <NftDetails name="Red Ape" price="0.09" img={girlNft} />
     </div>
   );
 }

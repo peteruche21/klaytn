@@ -16,27 +16,29 @@ const NFT: NextPage = () => {
         <meta name="description" content="acend" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="chain-picker">
-        <Picker name="All Chains" />
+      <div className={style.paddedContainer}>
+        <h2 className={style.title}>NFTs Dashboard</h2>
+        <div className="chain-picker">
+          <Picker name="All Chains" />
+        </div>
+
+        <div className="cards flex justify-around flex-wrap mt-6">
+          {[...Array(5)].map((data) => (
+            <Card />
+          ))}
+        </div>
+
+        <div className="transaction">
+          <Transaction />
+        </div>
       </div>
-      <div className="transaction">
-        <Transaction />
-      </div>
-      <div className="collections-market">
-        <div className="collections">
+      <div className={style.collections_market}>
+        <div className={style.collections}>
           <Collections />
         </div>
-        <div className="market">
+        <div className={style.market}>
           <Market />
         </div>
-      </div>
-      <div className="cards flex justify-center flex-wrap">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
       </div>
     </div>
   );

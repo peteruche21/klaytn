@@ -4,7 +4,17 @@
   grid-template-columns: 4fr 1fr;
   justify-content: space-between;
 }
-
+.title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
 .header {
   padding: 10px;
+}
+@media screen and (min-width: 768px) {
+  .grid,
+  .header {
+    grid-template-columns: 2fr 1fr;
+  }
 }

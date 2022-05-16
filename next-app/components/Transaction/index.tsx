@@ -6,7 +6,7 @@ import Picker from "../Picker";
 function index() {
   return (
     <div className={style.transaction}>
-      <h2>Transaction History</h2>
+      <h2 className={style.title}>Transaction History</h2>
 
       <div className={style.transact}>
         <div className={style.transfer}>

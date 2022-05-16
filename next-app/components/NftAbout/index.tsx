@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 function index({ img, token }) {
   return (
-    <div className="nftAbout flex border items-center">
+    <div className="nftAbout flex items-center">
       <div className="">
         <Image src={img} width={36} height={36} />
       </div>

@@ -7,7 +7,7 @@ import style from "./index.module.css";
 function index() {
   return (
     <div className={style.container}>
-      <h2>Top Collections</h2>
+      <h2 className={style.title}>Top Collections</h2>
 
       <div className={style.header}>
         <h4>Collection</h4>
@@ -21,15 +21,15 @@ function index() {
           <NftAbout img={ape} token={eth} />
           <div className={style.price}>
             <p>$43.93</p>
-            <p className="mt-4">$43.93</p>
+            <p className="">$43.93</p>
           </div>
           <div className={style.price}>
             <p>$43.93</p>
-            <p className="mt-4">$43.93</p>
+            <p className="">$43.93</p>
           </div>
           <div className={style.price}>
             <p>$43.93</p>
-            <p className="mt-4">$43.93</p>
+            <p className="">$43.93</p>
           </div>
         </div>
       ))}

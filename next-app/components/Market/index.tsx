@@ -6,7 +6,7 @@ import eth from "../../assets/images/eth.svg";
 function index() {
   return (
     <div>
-      <h2>Market Placse</h2>
+      <h2 className={style.title}>Market Place</h2>
 
       <div className={style.header}>
         <h4>Top Sales</h4>

@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-function index({ img, name, price, bold }) {
+function index({ img, name, price }) {
   return (
     <div
       className={`flex justify-between mb-2 px-3 ${
-        bold && "font-bold"
+        img && "font-bold"
       } capitalize`}
     >
       <p>{name}</p>
