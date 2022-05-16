@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, useState } from "react";
 import { connect, initWallet, switchChain } from "../../lib/auth";
 import { getConfig } from "../../lib/config";
 import globalState from "../../state";
@@ -11,6 +11,7 @@ interface ILayoutNode {
 
 const Layout: FC<ILayoutNode> = ({ children }) => {
   const state = globalState((state) => state);
+  const [siderOpen, setSiderOpen] = useState(false);
   const connectWallet = async () => {
     if (state.isConnected) return;
     await connect();
@@ -22,14 +23,12 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
       state.activeChain !== getConfig("testnet").hexChainId?.toLowerCase()
     );
   };
+  const toggleSiderBar = () => {
+    setSiderOpen(!siderOpen);
+  };
   const renderHeader = (): JSX.Element => {
     return (
-      <nav
-        className="
-        px-2 sm:px-4 py-2.5
-        bg-gradient-to-r
-        from-transparent via-yellow-50 to-pink-50"
-      >
+      <nav className="px-2 sm:px-4 py-2.5 bg-white">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
           <a href="https://localhost:3000/app" className="flex items-center">
             {/* <img
@@ -81,16 +80,18 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
       </nav>
     );
   };
+  const width = `w-[${siderOpen ? "200px" : "55px"}] fixed z-20`;
+  const margin = `p-5 ${siderOpen ? "ml-[200px]" : "ml-[55px]"} z-10`;
   return (
-    <>
-      {renderHeader()}
-      <div className="grid grid-cols-6 gap-4">
-        <div className="col-span-1">
-          <SideNavigation />
+    <div>
+      <div className="fixed w-full z-30">{renderHeader()}</div>
+      <div className="flex flex-row">
+        <div className={width}>
+          <SideNavigation toggle={toggleSiderBar} />
         </div>
-        <div className="col-span-5">{children}</div>
+        <div className={margin}>{children}</div>
       </div>
-    </>
+    </div>
   );
 };
 
