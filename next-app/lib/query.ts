@@ -1,19 +1,26 @@
 const axios = require("axios");
 import { getConfig } from "./config";
 
+interface IResponse {
+  [key: string]: {
+    [key: string]: {
+      [key: string]: [];
+    };
+  };
+}
+
 export const query = async (endpoint: string) => {
-  const { chainId } = getConfig("testnet");
+  const { chainId } = getConfig("mainnet");
   const api =
     "https://api.covalenthq.com/v1/" +
     chainId +
     endpoint +
-    `/?key=${process.env.COVALENT_API_KEY}`;
+    `key=${process.env.NEXT_PUBLIC_COVALENT_API_KEY}`;
   try {
-    const res = await axios
-      .get(api)
-      .then((response: { [key: string]: unknown }) => {
-        return response.items;
-      });
+    const res = await axios.get(api).then((response: IResponse) => {
+      const result = response.data.data.items;
+      return result;
+    });
     return res;
   } catch (error) {
     console.log(error);

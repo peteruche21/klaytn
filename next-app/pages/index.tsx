@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Covalent from "../components/testApiCalls";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -12,7 +13,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>Klaytn-covalent unified hackathon</main>
+      <main className={styles.main}>
+        Klaytn-covalent unified hackathon
+        <Covalent />
+      </main>
 
       <footer className={styles.footer}>
         <p>acend 2022</p>
