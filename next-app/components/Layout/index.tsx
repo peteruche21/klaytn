@@ -80,7 +80,7 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
       </nav>
     );
   };
-  const width = `w-[${siderOpen ? "200px" : "55px"}] fixed z-20`;
+  const width = `${siderOpen ? "w-[200px]" : "w-[55px]"} fixed z-20`;
   const margin = `p-5 ${siderOpen ? "ml-[200px]" : "ml-[55px]"} z-10`;
   return (
     <div>
