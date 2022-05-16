@@ -3,6 +3,8 @@ import { connect, initWallet, switchChain } from "../../lib/auth";
 import { getConfig } from "../../lib/config";
 import globalState from "../../state";
 import { formatAddress, WalletSeed } from "../../utils";
+import SideNavigation from "./sider";
+import styles from "../../styles/Home.module.css";
 
 interface ILayoutNode {
   children?: ReactNode;
@@ -25,8 +27,8 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
     return (
       <nav
         className="
-        px-2 sm:px-4 py-2.5 
-        bg-gradient-to-r 
+        px-2 sm:px-4 py-2.5
+        bg-gradient-to-r
         from-transparent via-yellow-50 to-pink-50"
       >
         <div className="container flex flex-wrap justify-between items-center mx-auto">
@@ -79,7 +81,17 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
   return (
     <>
       {renderHeader()}
-      {children}
+      <div className="grid grid-cols-6 gap-4">
+        <div className="col-span-1">
+          <SideNavigation />
+        </div>
+        <div className="col-span-5">
+          {children}
+          <footer className={styles.footer}>
+            <p>acend 2022</p>
+          </footer>
+        </div>
+      </div>
     </>
   );
 };

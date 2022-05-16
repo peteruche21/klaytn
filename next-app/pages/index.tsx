@@ -17,10 +17,6 @@ const Home: NextPage = () => {
         Klaytn-covalent unified hackathon
         <Covalent />
       </main>
-
-      <footer className={styles.footer}>
-        <p>acend 2022</p>
-      </footer>
     </div>
   );
 };
