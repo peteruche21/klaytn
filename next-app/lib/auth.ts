@@ -2,7 +2,7 @@ import { IGlobalState } from "../state";
 import caver from "./caver";
 import { getConfig } from "./config";
 
-const ethereum = typeof window !== "undefined" ? window.ethereum : null;
+const ethereum = typeof window !== "undefined" ? window.ethereum : undefined;
 
 const { networkName, hexChainId, httpRPCEndpoint, explorer } =
   getConfig("testnet");
@@ -45,7 +45,6 @@ export const switchChain = async () => {
     });
   } catch (error) {
     if ((error as { [key: string]: unknown }).code === 4902) {
-      console.log("reached");
       addChain();
     } else {
       alert(
@@ -65,5 +64,6 @@ export const initWallet = async (globalState: IGlobalState) => {
   const handleChainChanged = () => {
     window.location.reload();
   };
+  sessionStorage.setItem("currentAcendUser", accounts[0]);
   ethereum.on("chainChanged", handleChainChanged);
 };

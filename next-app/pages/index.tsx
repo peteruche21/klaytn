@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import Covalent from "../components/testApiCalls";
+import NFTBalance from "../components/Dashboard";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -15,7 +15,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         Klaytn-covalent unified hackathon
-        <Covalent />
+        <NFTBalance />
       </main>
     </div>
   );

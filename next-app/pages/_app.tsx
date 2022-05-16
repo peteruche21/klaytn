@@ -8,7 +8,7 @@ import globalState from "../state";
 function MyApp({ Component, pageProps }: AppProps) {
   const state = globalState((state) => state);
   useEffect(() => {
-    initWallet(state);
+    if (!state.isConnected) initWallet(state);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
