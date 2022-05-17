@@ -1,4 +1,5 @@
 import create from "zustand";
+import { persist } from "zustand/middleware";
 
 export interface IGlobalState {
   address: null | string;
@@ -9,6 +10,15 @@ export interface IGlobalState {
 
   activeChain: undefined | string;
   setActiveChain: (activeChain: string) => void;
+
+  walletActivity: {}[];
+  setWalletActivity: (walletActivity: {}[]) => void;
+
+  nftMarketsData: {}[];
+  setNftMarketsData: (nftMarketsData: {}[]) => void;
+
+  nftBalance: {}[];
+  setNftBalance: (nftBalance: {}[]) => void;
 }
 
 const globalState = create<IGlobalState>((set) => ({
@@ -20,6 +30,17 @@ const globalState = create<IGlobalState>((set) => ({
 
   activeChain: undefined,
   setActiveChain: (activeChain: string) => set((state) => ({ activeChain })),
+
+  walletActivity: [],
+  setWalletActivity: (walletActivity: {}[]) =>
+    set((state) => ({ walletActivity })),
+
+  nftMarketsData: [],
+  setNftMarketsData: (nftMarketsData: {}[]) =>
+    set((state) => ({ nftMarketsData })),
+
+  nftBalance: [],
+  setNftBalance: (nftBalance: {}[]) => set((state) => ({ nftBalance })),
 }));
 
 export default globalState;

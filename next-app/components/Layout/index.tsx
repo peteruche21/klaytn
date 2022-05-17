@@ -18,10 +18,7 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
     initWallet(state);
   };
   const handleSwitch = () => {
-    return (
-      state.isConnected &&
-      state.activeChain !== getConfig("testnet").hexChainId?.toLowerCase()
-    );
+    return state.activeChain !== getConfig("testnet").hexChainId?.toLowerCase();
   };
   const toggleSiderBar = () => {
     setSiderOpen(!siderOpen);

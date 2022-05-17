@@ -3,32 +3,32 @@ import React from "react";
 function SideNavigation({ toggle }) {
   return (
     <aside aria-label="Sidebar">
-      <div className="h-screen overflow-hidden py-4 px-3 bg-gray-50 rounded dark:bg-[#272ddb]">
+      <div className="h-screen overflow-hidden py-4 px-3 bg-gray-50 rounded">
         <ul className="space-y-2">
           <li className="h-10"></li>
           <li>
             <a
               href="#"
-              className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100"
             >
               <svg
-                className="flex-shrink-0 w-6 h-10 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                className="flex-shrink-0 w-6 h-10 text-gray-500 transition duration-75 group-hover:text-gray-900"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
               </svg>
-              <span className="flex-1 ml-3 whitespace-nowrap">Klaytn</span>
+              <span className="flex-1 ml-3 whitespace-nowrap">Dashboard</span>
             </a>
           </li>
           <li>
             <a
               href="#"
-              className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100"
             >
               <svg
-                className="flex-shrink-0 w-6 h-10 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                className="flex-shrink-0 w-6 h-10 text-gray-500 transition duration-75 group-hover:text-gray-900"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -36,16 +36,16 @@ function SideNavigation({ toggle }) {
                 <path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"></path>
                 <path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path>
               </svg>
-              <span className="flex-1 ml-3 whitespace-nowrap">Item 2</span>
+              <span className="flex-1 ml-3 whitespace-nowrap">Wallet</span>
             </a>
           </li>
           <li>
             <a
               href="#"
-              className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100"
             >
               <svg
-                className="flex-shrink-0 w-6 h-10 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                className="flex-shrink-0 w-6 h-10 text-gray-500 transition duration-75 group-hover:text-gray-900"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -56,16 +56,16 @@ function SideNavigation({ toggle }) {
                   clipRule="evenodd"
                 ></path>
               </svg>
-              <span className="flex-1 ml-3 whitespace-nowrap">Item 3</span>
+              <span className="flex-1 ml-3 whitespace-nowrap">User Center</span>
             </a>
           </li>
           <li>
             <a
               href="#"
-              className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100"
             >
               <svg
-                className="flex-shrink-0 w-6 h-10 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                className="flex-shrink-0 w-6 h-10 text-gray-500 transition duration-75 group-hover:text-gray-900"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -76,16 +76,16 @@ function SideNavigation({ toggle }) {
                   clipRule="evenodd"
                 ></path>
               </svg>
-              <span className="flex-1 ml-3 whitespace-nowrap">Item 4</span>
+              <span className="flex-1 ml-3 whitespace-nowrap">Markets</span>
             </a>
           </li>
           <li>
             <a
               href="#"
-              className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100"
             >
               <svg
-                className="flex-shrink-0 w-6 h-10 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                className="flex-shrink-0 w-6 h-10 text-gray-500 transition duration-75 group-hover:text-gray-900"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -96,16 +96,16 @@ function SideNavigation({ toggle }) {
                   clipRule="evenodd"
                 ></path>
               </svg>
-              <span className="flex-1 ml-3 whitespace-nowrap">Item 5</span>
+              <span className="flex-1 ml-3 whitespace-nowrap">Dex</span>
             </a>
           </li>
           <li>
             <a
               href="#"
-              className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100"
             >
               <svg
-                className="flex-shrink-0 w-6 h-10 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                className="flex-shrink-0 w-6 h-10 text-gray-500 transition duration-75 group-hover:text-gray-900"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -116,20 +116,20 @@ function SideNavigation({ toggle }) {
                   clipRule="evenodd"
                 ></path>
               </svg>
-              <span className="flex-1 ml-3 whitespace-nowrap">Item 6</span>
+              <span className="flex-1 ml-3 whitespace-nowrap">Events</span>
             </a>
           </li>
         </ul>
         <button
           type="button"
-          className="text-center text-sm text-gray-900  
-          dark:text-white bg-gray-100 dark:bg-gray-700
+          className="text-center text-sm 
+           bg-blue-600 hover:bg-gray-500
             font-medium rounded-lg  p-1  md:mr-0
             bottom-3 absolute"
           onClick={() => toggle()}
         >
           <svg
-            className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            className="w-6 h-6 text-white transition duration-75"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
