@@ -55,15 +55,24 @@ export const switchChain = async () => {
 };
 export const initWallet = async (globalState: IGlobalState) => {
   if (typeof ethereum === "undefined") return;
-  const accounts = await ethereum.request({ method: "eth_accounts" });
-  if (accounts.length === 0) return;
-  globalState.setAddress(accounts[0]);
-  const chainId = await ethereum.request({ method: "eth_chainId" });
-  globalState.setActiveChain(chainId);
-  globalState.setIsConnected(true);
+  try {
+    const accounts = await ethereum.request({ method: "eth_accounts" });
+    if (accounts.length === 0) return;
+    globalState.setAddress(accounts[0]);
+    const chainId = await ethereum.request({ method: "eth_chainId" });
+    globalState.setActiveChain(chainId);
+    globalState.setIsConnected(true);
+  } catch (error) {
+    console.log(error);
+  }
   const handleChainChanged = () => {
     window.location.reload();
   };
-  sessionStorage.setItem("currentAcendUser", accounts[0]);
+  const handleDisconnect = () => {
+    globalState.setIsConnected(false); // ! may be redundant, but is intended to update session storage
+    globalState.setAddress("");
+    window.location.reload();
+  };
   ethereum.on("chainChanged", handleChainChanged);
+  ethereum.on("disconnect", handleDisconnect);
 };
