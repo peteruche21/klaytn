@@ -13,7 +13,7 @@ export const query = async (endpoint: string) => {
   const { chainId } = getConfig("mainnet");
   const api =
     "https://api.covalenthq.com/v1/" +
-    chainId +
+    "1" +
     endpoint +
     `key=${process.env.NEXT_PUBLIC_COVALENT_API_KEY}`;
   try {

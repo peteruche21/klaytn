@@ -1,22 +1,20 @@
-import { useState } from "react";
 import { TokenBalancesEndpoint } from "../lib/endpoints";
 import { query } from "../lib/query";
+import globalState from "../state";
 
 interface INFTs {
   [key: string]: { [key: string]: { [key: string]: unknown } }[];
 }
 
 export const useNFTBalances = () => {
-  const [nftBalance, setNftBalance] = useState<{}[]>([]);
-  const [tokenBalance, setTokenBalance] = useState<{}[]>([]);
-
+  const state = globalState((state) => state);
   async function queryBalances(address: string) {
     // query balance
     const response = await query(TokenBalancesEndpoint(address));
     // filter out nfts
     const reducedResult = reduceResult(response);
     // setsBalance
-    setNftBalance(reducedResult);
+    state.setNftBalance(reducedResult);
   }
 
   const reduceResult = (data: {}[]) => {
@@ -43,5 +41,5 @@ export const useNFTBalances = () => {
     return result;
   };
 
-  return { queryBalances, nftBalance, tokenBalance };
+  return queryBalances;
 };
