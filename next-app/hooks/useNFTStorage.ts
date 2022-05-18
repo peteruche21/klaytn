@@ -21,3 +21,5 @@ const useNFTStorage = () => {
 
   return storeNFT;
 };
+
+export default useNFTStorage;

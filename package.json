@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "next-app"
+    "next-app",
+    "smart-contracts"
   ],
   "scripts": {
     "dev": "yarn workspace next-app next dev",
     "build": "yarn workspace next-app next build",
     "start": "yarn workspace next-app next start",
-    "lint": "yarn workspace next-app next lint"
+    "lint": "yarn workspace next-app next lint",
+    "hardhat": "yarn workspace smart-contracts hardhat"
   }
 }
