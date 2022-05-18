@@ -1,9 +1,9 @@
 import { TransactionsEndpoint } from "../lib/endpoints";
 import { query } from "../lib/query";
-import globalState from "../state";
+import useStore from "../store";
 
 export const useWalletActivity = () => {
-  const state = globalState((state) => state);
+  const state = useStore((state) => state);
   const queryTransactions = async (address: string) => {
     // query balance
     const response = await query(TransactionsEndpoint(address));

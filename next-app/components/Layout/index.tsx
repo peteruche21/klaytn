@@ -1,7 +1,7 @@
-import React, { FC, ReactNode, useState } from "react";
+import React, { FC, ReactNode, useState, useEffect } from "react";
 import { connect, initWallet, switchChain } from "../../lib/auth";
 import { getConfig } from "../../lib/config";
-import globalState from "../../state";
+import useStore from "../../store";
 import { formatAddress, WalletSeed } from "../../utils";
 import SideNavigation from "./sider";
 
@@ -10,10 +10,18 @@ interface ILayoutNode {
 }
 
 const Layout: FC<ILayoutNode> = ({ children }) => {
-  const state = globalState((state) => state);
+  const state = useStore((state) => state);
+
+  const [isConnected, setIsConnected] = useState(false);
   const [siderOpen, setSiderOpen] = useState(false);
+
+  useEffect(() => {
+    setIsConnected(state.isConnected);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.isConnected]);
+
   const connectWallet = async () => {
-    if (state.isConnected) return;
+    if (isConnected) return true;
     await connect();
     initWallet(state);
   };
@@ -23,6 +31,10 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
   const toggleSiderBar = () => {
     setSiderOpen(!siderOpen);
   };
+
+  const width = `${siderOpen ? "w-[200px]" : "w-[55px]"} fixed z-20`;
+  const margin = `p-5 ${siderOpen ? "ml-[200px]" : "ml-[55px]"} z-10`;
+
   const renderHeader = (): JSX.Element => {
     return (
       <nav className="px-2 sm:px-4 py-2.5 bg-white">
@@ -47,14 +59,14 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
                 font-medium rounded-lg  
                 px-5 py-2.5  mr-3 md:mr-0"
                 onClick={
-                  state.isConnected
+                  isConnected
                     ? handleSwitch()
                       ? switchChain
                       : () => {}
                     : connectWallet
                 }
               >
-                {state.isConnected ? (
+                {isConnected ? (
                   handleSwitch() ? (
                     "Switch Network"
                   ) : (
@@ -77,8 +89,7 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
       </nav>
     );
   };
-  const width = `${siderOpen ? "w-[200px]" : "w-[55px]"} fixed z-20`;
-  const margin = `p-5 ${siderOpen ? "ml-[200px]" : "ml-[55px]"} z-10`;
+
   return (
     <div>
       <div className="fixed w-full z-30">{renderHeader()}</div>

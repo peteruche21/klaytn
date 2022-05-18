@@ -1,4 +1,4 @@
-import { IGlobalState } from "../state";
+import { IStore } from "../store";
 import caver from "./caver";
 import { getConfig } from "./config";
 
@@ -53,15 +53,15 @@ export const switchChain = async () => {
     }
   }
 };
-export const initWallet = async (globalState: IGlobalState) => {
+export const initWallet = async (store: IStore) => {
   if (typeof ethereum === "undefined") return;
   try {
     const accounts = await ethereum.request({ method: "eth_accounts" });
     if (accounts.length === 0) return;
-    globalState.setAddress(accounts[0]);
+    store.setAddress(accounts[0]);
     const chainId = await ethereum.request({ method: "eth_chainId" });
-    globalState.setActiveChain(chainId);
-    globalState.setIsConnected(true);
+    store.setActiveChain(chainId);
+    store.setIsConnected(true);
   } catch (error) {
     console.log(error);
   }
@@ -69,8 +69,8 @@ export const initWallet = async (globalState: IGlobalState) => {
     window.location.reload();
   };
   const handleDisconnect = () => {
-    globalState.setIsConnected(false); // ! may be redundant, but is intended to update session storage
-    globalState.setAddress("");
+    store.setIsConnected(false); // ! may be redundant, but is intended to update session storage
+    store.setAddress("");
     window.location.reload();
   };
   ethereum.on("chainChanged", handleChainChanged);

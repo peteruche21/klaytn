@@ -1,13 +1,13 @@
 import { TokenBalancesEndpoint } from "../lib/endpoints";
 import { query } from "../lib/query";
-import globalState from "../state";
+import useStore from "../store";
 
 interface INFTs {
   [key: string]: { [key: string]: { [key: string]: unknown } }[];
 }
 
 export const useNFTBalances = () => {
-  const state = globalState((state) => state);
+  const state = useStore((state) => state);
   async function queryBalances(address: string) {
     // query balance
     const response = await query(TokenBalancesEndpoint(address));

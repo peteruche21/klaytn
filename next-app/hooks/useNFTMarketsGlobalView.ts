@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { NFTMarketsGlobalViewEndpoint } from "../lib/endpoints";
 import { query } from "../lib/query";
-import globalState from "../state";
+import useStore from "../store";
 
 export const useNFTMarketsGlobalView = () => {
-  const state = globalState((state) => state);
+  const state = useStore((state) => state);
   const queryNFTMarkets = async () => {
     // query balance
     const response = await query(NFTMarketsGlobalViewEndpoint());
