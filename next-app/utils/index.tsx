@@ -1,4 +1,5 @@
 import Blockies from "react-blockies";
+import marketPlaces from "./markeplaces.json";
 
 export const formatAddress = (address: string): string => {
   const n: number = 6;
@@ -9,6 +10,10 @@ export const formatAddress = (address: string): string => {
     )}`;
   }
   return "";
+};
+
+export const marketPlacesList = () => {
+  return marketPlaces;
 };
 
 export const WalletSeed = (address: string) => {

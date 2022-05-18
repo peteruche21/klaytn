@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "logo": "https://storage.googleapis.com/opensea-static/Logomark/Logomark-Blue.png",
+    "name": "Opensea",
+    "url": "https://opensea.io/"
+  },
+  {
+    "id": 2,
+    "logo": "https://airdrops.io/wp-content/uploads/2020/10/Rarible-logo.jpg",
+    "name": "Rarible",
+    "url": "https://rarible.com/"
+  },
+  {
+    "id": 3,
+    "logo": "https://www.niftytable.com/content/images/2021/05/logo.png",
+    "name": "Foundation",
+    "url": "https://foundation.app/"
+  },
+  {
+    "id": 4,
+    "logo": "https://research.binance.com/static/images/projects/superrare/logo.png",
+    "name": "SuperRare",
+    "url": "https://superrare.com/"
+  },
+  {
+    "id": 5,
+    "logo": "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/baxlq7gjubqfaaatlyjy",
+    "name": "NiftyGateway",
+    "url": "https://niftygateway.com/"
+  },
+  {
+    "id": 6,
+    "logo": "https://cdn.studentdiscount.co.uk/img/binance.jpg",
+    "name": "Binance NFT",
+    "url": "https://www.binance.com/en/nft/home/"
+  },
+  {
+    "id": 7,
+    "logo": "https://s2.coinmarketcap.com/static/img/coins/200x200/17081.png",
+    "name": "LooksRare",
+    "url": "https://looksrare.org/"
+  },
+  {
+    "id": 8,
+    "logo": "https://d3luz8cn6n4wh0.cloudfront.net/drops/cnbc/mintable_logomark_round_gradient.png",
+    "name": "Mintable",
+    "url": "https://mintable.app/"
+  },
+  {
+    "id": 9,
+    "logo": "https://zora.co/assets/og-image.png",
+    "name": "Zora",
+    "url": "https://zora.co/"
+  },
+  {
+    "id": 10,
+    "logo": "https://docs.knownorigin.io/press-kit/Black-blue-ko-Icn.svg",
+    "name": "KnownOrigin",
+    "url": "https://knownorigin.io/"
+  }
+]
