@@ -20,6 +20,12 @@ export interface IStore {
 
   nftBalance: {}[];
   setNftBalance: (nftBalance: {}[]) => void;
+
+  ERC20Balance: {}[];
+  setERC20Balance: (ERC20Balance: {}[]) => void;
+
+  activityGraph: {};
+  setActivityGraph: (activityGraph: {}) => void;
 }
 
 const useStore = create(
@@ -46,6 +52,14 @@ const useStore = create(
 
       nftBalance: [],
       setNftBalance: (nftBalance: {}[]) => set((state) => ({ nftBalance })),
+
+      ERC20Balance: [],
+      setERC20Balance: (ERC20Balance: {}[]) =>
+        set((state) => ({ ERC20Balance })),
+
+      activityGraph: {},
+      setActivityGraph: (activityGraph: {}) =>
+        set((state) => ({ activityGraph })),
     }),
     {
       name: "acend",

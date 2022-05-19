@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import Layout from "../components/Layout";
 import { initWallet } from "../lib/auth";
 import { useEffect, useMemo } from "react";
-import { useNFTBalances } from "../hooks/useNFTBalances";
+import { useTokenBalances } from "../hooks/useTokenBalances";
 import { useNFTMarketsGlobalView } from "../hooks/useNFTMarketsGlobalView";
 import { useWalletActivity } from "../hooks/useTransactions";
 import useStore from "../store";
@@ -11,7 +11,7 @@ import useStore from "../store";
 function MyApp({ Component, pageProps }: AppProps) {
   const state = useStore((state) => state);
 
-  const queryBalances = useNFTBalances();
+  const queryBalances = useTokenBalances();
   const queryNFTMarkets = useNFTMarketsGlobalView();
   const queryTransactions = useWalletActivity();
 

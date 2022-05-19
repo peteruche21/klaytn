@@ -11,6 +11,23 @@ export const useWalletActivity = () => {
     const reducedResult = reduceResult(response);
     // setsBalance
     state.setWalletActivity(reducedResult);
+    // compute activity graph
+    const activityGraph = onChainActivityGraph(reducedResult);
+    // update state
+    state.setActivityGraph(activityGraph);
+  };
+
+  const onChainActivityGraph = (data: { [key: string]: string }[]) => {
+    const activityGraph: { [key: string]: number } = {};
+    data.map((item) => {
+      const date = item.timestamp.slice(0, 10);
+      if (activityGraph[date] === undefined) {
+        activityGraph[date] = 1;
+      } else {
+        activityGraph[date] += 1;
+      }
+    });
+    return activityGraph;
   };
 
   const reduceResult = (data: {}[]) => {
