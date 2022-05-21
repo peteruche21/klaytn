@@ -6,6 +6,7 @@ import Transfer from "../../components/Transfer";
 import Bridge from "../../components/Bridge";
 import Collections from "../../components/Collections";
 import Picker from "../../components/Picker";
+import PickerModal from "../../components/PickerModal";
 import Transaction from "../../components/Transaction";
 import Market from "../../components/Market";
 import style from "./NFT.module.css";
@@ -45,6 +46,7 @@ const NFT: NextPage = () => {
 
       <Bridge />
       <Transfer />
+      <PickerModal />
     </div>
   );
 };

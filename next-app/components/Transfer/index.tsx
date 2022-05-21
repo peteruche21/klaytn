@@ -5,7 +5,7 @@ import Card from "../Card/Card";
 function index() {
   let id = 11;
   return (
-    <Modal open={true}>
+    <Modal open={false}>
       <div className={style.modal}>
         <div className={style.header}>
           <h2>Transaction</h2>
