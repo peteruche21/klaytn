@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Card from "../../components/Card/Card";
+import Bridge from "../../components/Bridge";
 import Collections from "../../components/Collections";
 import Picker from "../../components/Picker";
 import Transaction from "../../components/Transaction";
@@ -40,6 +41,8 @@ const NFT: NextPage = () => {
           <Market />
         </div>
       </div>
+
+      <Bridge />
     </div>
   );
 };

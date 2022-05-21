@@ -12,5 +12,10 @@
     "start": "yarn workspace next-app next start",
     "lint": "yarn workspace next-app next lint",
     "hardhat": "yarn workspace smart-contracts hardhat"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.8.0"
   }
 }
