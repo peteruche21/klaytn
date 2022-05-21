@@ -2,7 +2,16 @@
   "name": "smart-contracts",
   "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "hardhat": "^2.9.5"
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.6.0",
+    "@typechain/hardhat": "^2.3.0",
+    "hardhat": "^2.9.6",
+    "hardhat-deploy": "^0.11.8",
+    "hardhat-gas-reporter": "^1.0.4",
+    "prettier": "^2.3.2",
+    "prettier-plugin-solidity": "^1.0.0-beta.13",
+    "solhint": "^3.3.6",
+    "solidity-coverage": "^0.7.16",
+    "typechain": "^5.1.2"
   }
 }

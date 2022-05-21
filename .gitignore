@@ -7,6 +7,7 @@ node_modules
 
 # testing
 coverage
+coverage.json
 
 # next.js
 .next/
@@ -33,3 +34,8 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+#Hardhat files
+cache
+artifacts
+typechain
