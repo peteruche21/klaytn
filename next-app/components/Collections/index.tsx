@@ -21,15 +21,15 @@ function index() {
           <NftAbout img={ape} token={eth} />
           <div className={style.price}>
             <p>$43.93</p>
-            <p className="">$43.93</p>
+            <p className={style.change}>$293</p>
           </div>
           <div className={style.price}>
             <p>$43.93</p>
-            <p className="">$43.93</p>
+            <p className={style.change}>$43.93</p>
           </div>
           <div className={style.price}>
             <p>$43.93</p>
-            <p className="">$43.93</p>
+            <p className={style.change}>$43.93</p>
           </div>
         </div>
       ))}
