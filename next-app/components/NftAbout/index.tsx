@@ -6,15 +6,15 @@ function index({ img, token }) {
       <div className="">
         <Image src={img} width={36} height={36} />
       </div>
-      <div className="">
+      <div className="ml-1 md:ml-4">
         <p className="font-bold">
-          <span className="color-red">Info</span>
+          <span className="bg-[red] mr-1 p-1 mb-4 rounded">Info</span>
           Teraforms by Mat
         </p>
-        <p className="flex items-center">
+        <p className="flex items-center mt-2">
           {token && (
-            <span>
-              <Image src={token} />
+            <span className="mr-2 ">
+              <Image src={token} width={18} height={18} />
             </span>
           )}
           ETH
