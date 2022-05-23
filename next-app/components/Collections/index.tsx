@@ -1,40 +1,64 @@
-import React from "react";
-import NftAbout from "../NftAbout";
-import eth from "../../assets/images/eth.svg";
-import ape from "../../assets/images/ape.svg";
+import React, { FC } from "react";
+import { formatAddress } from "../../utils";
 
-import style from "./index.module.css";
-function index() {
-  return (
-    <div className={style.container}>
-      <h2 className={style.title}>Top Collections</h2>
-
-      <div className={style.header}>
-        <h4>Collection</h4>
-        <h4>Volume</h4>
-        <h4>Trader</h4>
-        <h4>Sales</h4>
-      </div>
-
-      {[...Array(3)].map((data) => (
-        <div className={style.grid}>
-          <NftAbout img={ape} token={eth} />
-          <div className={style.price}>
-            <p>$43.93</p>
-            <p className="">$43.93</p>
-          </div>
-          <div className={style.price}>
-            <p>$43.93</p>
-            <p className="">$43.93</p>
-          </div>
-          <div className={style.price}>
-            <p>$43.93</p>
-            <p className="">$43.93</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
+interface IProps {
+  data: { [key: string]: string }[];
 }
 
-export default index;
+const Collections: FC<IProps> = ({ data }) => {
+  const renderList = (): JSX.Element[] => {
+    return data.map((element, index) => {
+      return (
+        <tr className="bg-white border-b hover:bg-gray-50" key={index}>
+          <th scope="row" className="px-5 py-4 text-gray-900 whitespace-nowrap">
+            <img
+              className="w-10 h-10 rounded"
+              src={element.genesisNft}
+              alt="Default avatar"
+            />
+          </th>
+          <td className="px-5 py-4">{element.collectionName}</td>
+          <td className="px-5 py-4">${element.volume24h}</td>
+          <td className="px-5 py-4">${element.marketCap}</td>
+          <td className="px-5 py-4">${element.floorPrice}</td>
+          <td className="px-5 py-4">
+            <a href="#" className="font-medium text-blue-500 hover:underline">
+              {formatAddress(element.collectionAddress as string)}
+            </a>
+          </td>
+        </tr>
+      );
+    });
+  };
+  return (
+    <div>
+      <div className="relative overflow-x-auto overflow-y-auto shadow-md sm:rounded-lg max-h-[122vh]">
+        <table className="w-full text-sm text-left text-gray-500 ">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+            <tr>
+              <th scope="col" className="px-5 py-3"></th>
+              <th scope="col" className="px-5 py-3">
+                Collection
+              </th>
+              <th scope="col" className="px-5 py-3">
+                Volume24h
+              </th>
+              <th scope="col" className="px-5 py-3">
+                MarketCap
+              </th>
+              <th scope="col" className="px-5 py-3">
+                FloorPrice
+              </th>
+              <th scope="col" className="px-5 py-3">
+                <span className="sr-only">Address</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>{renderList()}</tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+
+export default Collections;

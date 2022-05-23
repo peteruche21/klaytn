@@ -1,41 +1,45 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/flowbite/**/*.js",
+  ],
+  safelist: [
+    "w-64",
+    "w-1/2",
+    "rounded-l-lg",
+    "rounded-r-lg",
+    "bg-gray-200",
+    "grid-cols-4",
+    "grid-cols-7",
+    "h-6",
+    "leading-6",
+    "h-9",
+    "leading-9",
+    "shadow-lg",
   ],
   theme: {
+    colors: {
+      gray: colors.gray,
+      blue: colors.sky,
+      red: colors.rose,
+      pink: colors.fuchsia,
+    },
+    fontFamily: {
+      sans: ["Graphik", "sans-serif"],
+      serif: ["Merriweather", "serif"],
+    },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-      },
-      fontFamily: {
-        ...fontFamily,
-        header: ["Montserrat", ...fontFamily.sans],
-        sans: [
-          "Roboto",
-          "ui-sans-serif",
-          "system-ui",
-          "Open Sans",
-          ...fontFamily.sans,
-        ],
-      },
-      colors: {
-        yellow: {
-          base: "#FFB400",
-          dark: "#F57E1F",
-        },
-        blue: {
-          light: "#38B6FF",
-          deep: "#10294C",
-        },
-      },
       spacing: {
-        6.5: "1.270rem",
-        120: "36rem",
+        128: "32rem",
+        144: "36rem",
+      },
+      borderRadius: {
+        "4xl": "2rem",
       },
     },
   },
-  // plugins: [require("@tailwindcss/typography")],
+  plugins: [require("flowbite/plugin")],
 };

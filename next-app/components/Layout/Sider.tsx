@@ -1,6 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 
-function SideNavigation({ toggle }) {
+interface IProps {
+  toggle: () => void;
+}
+
+const SideNavigation: FC<IProps> = ({ toggle }) => {
   return (
     <aside aria-label="Sidebar">
       <div className="h-screen overflow-hidden py-4 px-3 bg-gray-50 rounded">
@@ -101,7 +105,7 @@ function SideNavigation({ toggle }) {
           </li>
           <li>
             <a
-              href="#"
+              href="/activity"
               className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100"
             >
               <svg
@@ -116,7 +120,7 @@ function SideNavigation({ toggle }) {
                   clipRule="evenodd"
                 ></path>
               </svg>
-              <span className="flex-1 ml-3 whitespace-nowrap">Events</span>
+              <span className="flex-1 ml-3 whitespace-nowrap">Activity</span>
             </a>
           </li>
         </ul>
@@ -129,18 +133,23 @@ function SideNavigation({ toggle }) {
           onClick={() => toggle()}
         >
           <svg
+            xmlns="http://www.w3.org/2000/svg"
             className="w-6 h-6 text-white transition duration-75"
             fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
           >
-            <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-            <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+            />
           </svg>
         </button>
       </div>
     </aside>
   );
-}
+};
 
 export default SideNavigation;

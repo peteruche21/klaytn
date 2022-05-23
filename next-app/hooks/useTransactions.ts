@@ -2,6 +2,10 @@ import { TransactionsEndpoint } from "../lib/endpoints";
 import { query } from "../lib/query";
 import useStore from "../store";
 
+interface IActivityGraph<T> {
+  [key: string]: T;
+}
+
 export const useWalletActivity = () => {
   const state = useStore((state) => state);
   const queryTransactions = async (address: string) => {
@@ -18,11 +22,16 @@ export const useWalletActivity = () => {
   };
 
   const onChainActivityGraph = (data: { [key: string]: string }[]) => {
-    const activityGraph: { [key: string]: number } = {};
+    const activityGraph: IActivityGraph<any> = {};
     data.map((item) => {
       const date = item.timestamp.slice(0, 10);
       if (activityGraph[date] === undefined) {
         activityGraph[date] = 1;
+        if (activityGraph.labels === undefined) {
+          activityGraph.labels = [date]
+        } else {
+          activityGraph.labels.push(date)
+        }
       } else {
         activityGraph[date] += 1;
       }
@@ -31,9 +40,9 @@ export const useWalletActivity = () => {
   };
 
   const reduceResult = (data: {}[]) => {
-    const result = data.reduce((memo: {}[], tx: { [key: string]: unknown }) => {
+    const result = data.reduce((memo: {}[], tx: { [key: string]: string }) => {
       memo.push({
-        timestamp: tx.block_signed_at,
+        timestamp: tx.block_signed_at.slice(0, 10),
         hash: tx.tx_hash,
         successful: tx.successful,
         from: tx.from_address,

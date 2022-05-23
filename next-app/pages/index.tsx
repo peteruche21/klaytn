@@ -1,8 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import NFTBalance from "../components/Dashboard";
-import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
@@ -13,10 +11,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        Klaytn-covalent unified hackathon
-        <NFTBalance />
-      </main>
+      <main>Klaytn-covalent unified hackathon</main>
     </div>
   );
 };

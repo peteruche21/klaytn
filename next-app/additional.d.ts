@@ -3,3 +3,4 @@ interface Window {
 }
 declare module "react-blockies";
 declare module "mime";
+

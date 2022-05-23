@@ -3,7 +3,8 @@ import { connect, initWallet, switchChain } from "../../lib/auth";
 import { getConfig } from "../../lib/config";
 import useStore from "../../store";
 import { formatAddress, WalletSeed } from "../../utils";
-import SideNavigation from "./sider";
+import SideNavigation from "./Sider";
+import styles from "../../styles/Home.module.css";
 
 interface ILayoutNode {
   children?: ReactNode;
@@ -33,7 +34,7 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
   };
 
   const width = `${siderOpen ? "w-[200px]" : "w-[55px]"} fixed z-20`;
-  const margin = `p-5 ${siderOpen ? "ml-[200px]" : "ml-[55px]"} z-10`;
+  const margin = `p-5 w-full ${siderOpen ? "ml-[200px]" : "ml-[55px]"} z-10`;
 
   const renderHeader = (): JSX.Element => {
     return (
@@ -74,7 +75,7 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
                       <div className="m-auto">
                         {formatAddress(state.address as string)}
                       </div>
-                      <div className="rounded-md border-green-500 border-2">
+                      <div className="relative w-7 h-7 overflow-hidden bg-gray-100 rounded-full">
                         {WalletSeed(state.address as string)}
                       </div>
                     </div>
@@ -97,7 +98,9 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
         <div className={width}>
           <SideNavigation toggle={toggleSiderBar} />
         </div>
-        <div className={margin}>{children}</div>
+        <div className={margin}>
+          <main className={styles.main}>{children}</main>
+        </div>
       </div>
     </div>
   );
