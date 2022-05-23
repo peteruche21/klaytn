@@ -4,4 +4,6 @@
 
 ## minter contract address: 0x6728cb8cb79fcAfEe4f8608030503eDC8621483b
 
-## presentation slides: [here]("https://www.canva.com/design/DAFBERyAsK8/C-8P-w_bg4M-tBIWLMgmYA/edit?utm_content=DAFBERyAsK8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton")
+## presentation slides: [here](https://www.canva.com/design/DAFBERyAsK8/C-8P-w_bg4M-tBIWLMgmYA/edit?utm_content=DAFBERyAsK8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+## live URL: [acend.app](https://acend-klaytn.vercel.app/)
