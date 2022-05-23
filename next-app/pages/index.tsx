@@ -20,7 +20,6 @@ const Home: NextPage = () => {
           </p>
           <p>
             for demo purposes. the data supplied to this app is from etheruem
-            <address></address>
             <span className="text-blue-500 hover:underline"> demo.eth </span>
             to enable us have rich data for testing and demo purposes
           </p>

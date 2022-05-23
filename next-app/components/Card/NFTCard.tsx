@@ -19,9 +19,12 @@ const NFTCard = ({
   return (
     <div className="max-w-xs bg-white rounded-lg border border-gray-200 drop-shadow-[0_10px_10px_rgba(0,0,35,0.25)] w-[250px] h-[350px]">
       <img
-        src={image ? image : "/images/blank.jpg"}
+        src={image}
         alt={name}
-        className="rounded-t-xl w-full max-h-[250px]"
+        onError={(e) => {
+          e.currentTarget.src = "/images/blank.jpg";
+        }}
+        className="rounded-t-xl w-full h-[250px]"
       />
       <div className="flex items-center space-x-2 p-2">
         <div className="flex-1 min-w-0">
