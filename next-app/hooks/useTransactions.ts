@@ -28,9 +28,9 @@ export const useWalletActivity = () => {
       if (activityGraph[date] === undefined) {
         activityGraph[date] = 1;
         if (activityGraph.labels === undefined) {
-          activityGraph.labels = [date]
+          activityGraph.labels = [date];
         } else {
-          activityGraph.labels.push(date)
+          activityGraph.labels.push(date);
         }
       } else {
         activityGraph[date] += 1;

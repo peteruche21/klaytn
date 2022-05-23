@@ -5,6 +5,7 @@ import useStore from "../../store";
 import { formatAddress, WalletSeed } from "../../utils";
 import SideNavigation from "./Sider";
 import styles from "../../styles/Home.module.css";
+import Link from "next/link";
 
 interface ILayoutNode {
   children?: ReactNode;
@@ -40,16 +41,18 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
     return (
       <nav className="px-2 sm:px-4 py-2.5 bg-white">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
-          <a href="/" className="flex items-center">
-            {/* <img
+          <Link href="/">
+            <div className="flex items-center">
+              {/* <img
               src="/brand/logo.svg"
               className="mr-3 h-6 sm:h-9"
               alt="acend Logo"
             /> */}
-            <span className="self-center text-xl font-semibold whitespace-nowrap text-gray-600">
-              Acend
-            </span>
-          </a>
+              <span className="self-center text-xl font-semibold whitespace-nowrap text-gray-600">
+                Acend
+              </span>
+            </div>
+          </Link>
           <div className="flex md:order-2">
             <div>
               <button
