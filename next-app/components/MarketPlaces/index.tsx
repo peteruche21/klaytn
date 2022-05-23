@@ -10,10 +10,7 @@ const NFTMarkets: FC<IProps> = ({ data }) => {
     return data.map((element, index) => {
       return (
         <div className="flow-root" key={index}>
-          <ul
-            role="list"
-            className="divide-y divide-gray-200 dark:divide-gray-700"
-          >
+          <ul role="list" className="divide-y divide-gray-200">
             <li className="py-3 sm:py-4">
               <div className="flex items-center space-x-4">
                 <div className="flex-shrink-0">
@@ -24,14 +21,14 @@ const NFTMarkets: FC<IProps> = ({ data }) => {
                   />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                  <p className="text-sm font-medium text-gray-900 truncate">
                     {element.name}
                   </p>
-                  <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+                  <p className="text-sm text-gray-500 truncate">
                     {element.url}
                   </p>
                 </div>
-                <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                <div className="inline-flex items-center text-base font-semibold text-gray-900">
                   <a href={element.url}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

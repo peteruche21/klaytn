@@ -40,7 +40,7 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
     return (
       <nav className="px-2 sm:px-4 py-2.5 bg-white">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
-          <a href="https://localhost:3000/app" className="flex items-center">
+          <a href="/" className="flex items-center">
             {/* <img
               src="/brand/logo.svg"
               className="mr-3 h-6 sm:h-9"

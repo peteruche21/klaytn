@@ -33,6 +33,9 @@ const Collections: FC<IProps> = ({ data }) => {
   return (
     <div>
       <div className="relative overflow-x-auto overflow-y-auto shadow-md sm:rounded-lg max-h-[122vh]">
+        <h5 className="text-xl font-bold leading-none text-gray-900 bg-white p-6">
+          Top Collections
+        </h5>
         <table className="w-full text-sm text-left text-gray-500 ">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>

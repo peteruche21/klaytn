@@ -33,6 +33,7 @@ export const useTokenBalances = () => {
             name: nft.external_data.name,
             description: nft.external_data.description,
             image: nft.external_data.image,
+            image256: nft.external_data.image_256,
             externalUrl: nft.external_data.external_url,
             attributes: nft.external_data.attributes,
           });
