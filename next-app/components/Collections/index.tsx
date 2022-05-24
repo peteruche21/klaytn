@@ -13,8 +13,13 @@ const Collections: FC<IProps> = ({ data }) => {
           <th scope="row" className="px-5 py-4 text-gray-900 whitespace-nowrap">
             <img
               className="w-10 h-10 rounded"
-              src={element.genesisNft}
-              alt="Default avatar"
+              src={
+                element.genesisNft ? element.genesisNft : "/images/blank.jpg"
+              }
+              onError={(e) => {
+                e.currentTarget.src = "/images/blank.jpg";
+              }}
+              alt={element.collectionName}
             />
           </th>
           <td className="px-5 py-4">{element.collectionName}</td>

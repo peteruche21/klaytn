@@ -44,9 +44,9 @@ export const switchChain = async () => {
       params: [{ chainId: hexChainId }],
     });
   } catch (error) {
-    if ((error as { [key: string]: unknown }).code === 4902) {
+    try {
       addChain();
-    } else {
+    } catch (error) {
       alert(
         "MetaMask is not installed. Please install it to use this app: https://metamask.io/download.html"
       );
@@ -69,7 +69,7 @@ export const initWallet = async (store: IStore) => {
     window.location.reload();
   };
   const handleDisconnect = () => {
-    store.setIsConnected(false); // ! may be redundant, but is intended to update session storage
+    store.setIsConnected(false);
     store.setAddress("");
     window.location.reload();
   };

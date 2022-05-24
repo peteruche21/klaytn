@@ -19,7 +19,7 @@ const NFTCard = ({
   return (
     <div className="max-w-xs bg-white rounded-lg border border-gray-200 drop-shadow-[0_10px_10px_rgba(0,0,35,0.25)] w-[250px] h-[350px]">
       <img
-        src={image}
+        src={image ? image : "/images/blank.jpg"}
         alt={name}
         onError={(e) => {
           e.currentTarget.src = "/images/blank.jpg";

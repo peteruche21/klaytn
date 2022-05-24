@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +17,7 @@ const Home: NextPage = () => {
             please use the navigation to see the completed parts of this
             project.
           </p>
+          <p>please use a desktop for this app.</p>
           <p>
             for demo purposes. the data supplied to this app is from etheruem
             <span className="text-blue-500 hover:underline"> demo.eth </span>
