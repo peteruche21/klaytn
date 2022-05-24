@@ -1,8 +1,10 @@
 # Getting Started
 
-First, run the development server:
+First, clone repo and install dependencies:
 
 ```bash
+git clone https://github.com/peteruche21/klaytn.git
+yarn install
 yarn dev
 ```
 
