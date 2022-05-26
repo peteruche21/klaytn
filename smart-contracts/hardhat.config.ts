@@ -20,14 +20,14 @@ const config: HardhatUserConfig = {
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
       gas: 8500000,
       timeout: 3000000,
-      gasPrice: 25000000000,
+      gasPrice: 250000000000,
     },
     baobab: {
       url: process.env.BAOBAB_URL,
       chainId: 1001,
       accounts: [process.env.PRIVATE_KEY as string],
-      gas: 20000000,
-      gasPrice: 25000000000,
+      gas: 500000,
+      gasPrice: 250000000000,
     },
   },
   gasReporter: {
