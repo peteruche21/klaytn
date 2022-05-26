@@ -8,7 +8,7 @@ interface IProps {
 const SideNavigation: FC<IProps> = ({ toggle }) => {
   return (
     <aside aria-label="Sidebar">
-      <div className="h-full overflow-hidden py-4 px-2 bg-gray-50 rounded">
+      <div className="h-screen overflow-hidden py-4 px-2 bg-gray-50 rounded">
         <ul className="space-y-2">
           <li className="h-12"></li>
           <li>
