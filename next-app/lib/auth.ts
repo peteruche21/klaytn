@@ -43,13 +43,15 @@ export const switchChain = async () => {
       method: "wallet_switchEthereumChain",
       params: [{ chainId: hexChainId }],
     });
-  } catch (error) {
-    try {
-      addChain();
-    } catch (error) {
-      alert(
-        "MetaMask is not installed. Please install it to use this app: https://metamask.io/download.html"
-      );
+  } catch (error: any) {
+    if (error.code === 4902) {
+      try {
+        addChain();
+      } catch (error) {
+        alert(
+          "MetaMask is not installed. Please install it to use this app: https://metamask.io/download.html"
+        );
+      }
     }
   }
 };

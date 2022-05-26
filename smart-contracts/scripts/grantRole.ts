@@ -1,17 +1,13 @@
-import { argv } from "process";
 import caver from "./caver";
-import abi from "../artifacts/contracts/EIP17.sol/AcendNFT.json";
-
-const address = argv[2];
+import NFTDeployment from "../deployments/baobab/AcendNFT.json";
+import MinterDeployment from "../deployments/baobab/Minter.json"
 
 const main = async () => {
   //@ts-ignore
-  const nftContract = new caver.contract(abi.abi, address);
-  const minter = await nftContract.call("MINTER_ROLE");
-  await nftContract
-    .send({ from: "0x" }, "grantRole", [minter, address])
-    .then(console.log)
-    .catch((error) => console.error(error));
+  const nftContract = new caver.contract(NFTDeployment.abi, NFTDeployment.address);
+  const minter = await nftContract.methods.MINTER_ROLE();
+  const receipt = await nftContract.methods.grantRole(minter, MinterDeployment.address)
+  console.log(receipt)
 };
 
 main()
