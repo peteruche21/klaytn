@@ -34,8 +34,8 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
     setSiderOpen(!siderOpen);
   };
 
-  const width = `${siderOpen ? "w-[200px]" : "w-[55px]"} fixed z-20`;
-  const margin = `p-5 w-full ${siderOpen ? "ml-[200px]" : "ml-[55px]"} z-10`;
+  const width = `${siderOpen ? "w-[200px]" : "w-[55px]"} fixed z-10`;
+  const margin = `p-5 w-full ${siderOpen ? "ml-[200px]" : "ml-[55px]"}`;
 
   const renderHeader = (): JSX.Element => {
     return (
@@ -43,11 +43,11 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
         <div className="container flex flex-wrap justify-between items-center mx-auto">
           <Link href="/">
             <div className="flex items-center">
-              {/* <img
-              src="/brand/logo.svg"
-              className="mr-3 h-6 sm:h-9"
-              alt="acend Logo"
-            /> */}
+              <img
+                src="/images/logo-1.png"
+                className="mr-2 w-9 h-9 rounded-full ring-2 ring-blue-400"
+                alt="acend Logo"
+              />
               <span className="self-center text-xl font-semibold whitespace-nowrap text-gray-600">
                 Acend
               </span>
@@ -96,7 +96,7 @@ const Layout: FC<ILayoutNode> = ({ children }) => {
 
   return (
     <div>
-      <div className="fixed w-full z-30">{renderHeader()}</div>
+      <div className="fixed w-full z-20">{renderHeader()}</div>
       <div className="flex flex-row">
         <div className={width}>
           <SideNavigation toggle={toggleSiderBar} />

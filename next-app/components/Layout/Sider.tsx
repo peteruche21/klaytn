@@ -8,9 +8,9 @@ interface IProps {
 const SideNavigation: FC<IProps> = ({ toggle }) => {
   return (
     <aside aria-label="Sidebar">
-      <div className="h-screen overflow-hidden py-4 px-3 bg-gray-50 rounded">
+      <div className="h-full overflow-hidden py-4 px-2 bg-gray-50 rounded">
         <ul className="space-y-2">
-          <li className="h-10"></li>
+          <li className="h-12"></li>
           <li>
             <Link href="/nft">
               <div className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100">
@@ -22,7 +22,7 @@ const SideNavigation: FC<IProps> = ({ toggle }) => {
                 >
                   <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
                 </svg>
-                <span className="flex-1 ml-3 whitespace-nowrap">NFT</span>
+                <span className="flex-1 ml-4 whitespace-nowrap">NFT</span>
               </div>
             </Link>
           </li>
@@ -42,7 +42,7 @@ const SideNavigation: FC<IProps> = ({ toggle }) => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="flex-1 ml-3 whitespace-nowrap">Portfolio</span>
+                <span className="flex-1 ml-4 whitespace-nowrap">Portfolio</span>
               </div>
             </Link>
           </li>
@@ -63,7 +63,7 @@ const SideNavigation: FC<IProps> = ({ toggle }) => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="flex-1 ml-3 whitespace-nowrap">Dex</span>
+                <span className="flex-1 ml-4 whitespace-nowrap">Dex</span>
               </div>
             </Link>
           </li>
@@ -84,7 +84,7 @@ const SideNavigation: FC<IProps> = ({ toggle }) => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="flex-1 ml-3 whitespace-nowrap">DeFi</span>
+                <span className="flex-1 ml-4 whitespace-nowrap">DeFi</span>
               </div>
             </Link>
           </li>
@@ -104,7 +104,7 @@ const SideNavigation: FC<IProps> = ({ toggle }) => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="flex-1 ml-3 whitespace-nowrap">Activity</span>
+                <span className="flex-1 ml-4 whitespace-nowrap">Activity</span>
               </div>
             </Link>
           </li>
@@ -112,7 +112,7 @@ const SideNavigation: FC<IProps> = ({ toggle }) => {
         <button
           type="button"
           className="text-center text-sm 
-           bg-blue-600 hover:bg-gray-500
+           bg-blue-500 hover:bg-blue-600
             font-medium rounded-lg  p-1  md:mr-0
             bottom-3 absolute"
           onClick={() => toggle()}
