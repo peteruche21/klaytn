@@ -12,7 +12,7 @@ const ActivityBarChart: FC<IProps> = ({ dataArr }) => {
 
   useEffect(() => {
     const ctx = canvasEl.current.getContext("2d");
-    const labels = [...activityDateArray];
+    const labels = [...activityDateArray].reverse();
     const data = {
       labels,
       datasets: [
@@ -58,7 +58,7 @@ const ActivityBarChart: FC<IProps> = ({ dataArr }) => {
 
   return (
     <div className="my-8">
-      <div className="shadow-lg rounded-lg overflow-hidden m-auto max-w-3xl">
+      <div className="shadow-lg rounded-lg overflow-hidden m-auto max-w-4xl">
         <div className="py-3 px-5 bg-gray-50">On Chain Activity</div>
         {activityDateArray && (
           <canvas id="myChart" ref={canvasEl} height="100" />

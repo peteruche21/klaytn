@@ -1,10 +1,15 @@
-import React from "react";
+import React, { FC, PropsWithChildren } from "react";
 
-function Modal({ heading, children }) {
+type IModalProps = PropsWithChildren<{
+  state: { [key: string]: () => void };
+  heading?: string;
+}>;
+
+const Modal: FC<IModalProps> = ({ state, heading, children }) => {
   return (
     <>
       <div
-        id="crypto-modal"
+        id="default-modal"
         tabIndex={-1}
         aria-hidden="true"
         className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center"
@@ -15,6 +20,7 @@ function Modal({ heading, children }) {
               type="button"
               className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
               data-modal-toggle="crypto-modal"
+              onClick={() => state.hide()}
             >
               <svg
                 className="w-5 h-5"
@@ -42,6 +48,6 @@ function Modal({ heading, children }) {
       </div>
     </>
   );
-}
+};
 
 export default Modal;

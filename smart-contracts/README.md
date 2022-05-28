@@ -14,7 +14,8 @@ REPORT_GAS= <boolean>
 - hardhat
 
 ```bash
+cd smart-contracts
 yarn hardhat compile
 yarn hardhat deploy
-npx ts-node scripts/grantRole.ts 0x["minter contract adress ..."]
+npx ts-node scripts/grantRole.ts
 ```
