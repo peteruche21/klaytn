@@ -1,0 +1,29 @@
+.swap {
+  background-color: var(--light-blue);
+  max-width: max-content;
+  border-radius: 15px;
+  padding: 20px;
+}
+.title {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.from {
+  margin-bottom: 20px;
+}
+.from h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.submit {
+  display: flex;
+  justify-content: flex-end;
+}
+.submit button {
+  background-color: var(--blue);
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
