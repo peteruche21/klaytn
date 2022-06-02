@@ -1,0 +1,10 @@
+.trends {
+  padding: 20px 0px;
+}
+.cards {
+  display: flex;
+  overflow-x: scroll;
+}
+.cards::-webkit-scrollbar {
+  display: none;
+}

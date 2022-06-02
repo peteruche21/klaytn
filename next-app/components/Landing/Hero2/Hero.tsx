@@ -4,15 +4,18 @@ import style from "./Hero.module.css";
 import phoneImage from "../../../assets/images/phones.png";
 import Image from "next/image";
 
-function Hero({ title, summary, image }) {
+interface IProps {
+  title: string;
+  summary: string;
+  image?: string;
+}
+function Hero({ title, summary, image }: IProps) {
   return (
     <div className={style.hero}>
       <div className={style.hero__Details}>
         <Details2 title={title} summary={summary} />
       </div>
-      <div className={style.hero__Image}>
-        <Image src={image} />
-      </div>
+      <div className={style.hero__Image}>{image && <Image src={image} />}</div>
     </div>
   );
 }
