@@ -4,7 +4,7 @@ import "chart.js/auto";
 import { Line, Pie, Doughnut } from "react-chartjs-2";
 
 function LineGraph({ datas }) {
-  const labels = [...datas.slice(0, 5).map((dat) => dat.name)];
+  const labels = [...datas.slice(36, 41).map((dat) => dat.name)];
   const options = {
     scales: {
       x: {
@@ -26,7 +26,7 @@ function LineGraph({ datas }) {
       {
         id: 1,
         label: "Hello",
-        data: [...datas.slice(0, 5).map((data) => data.usdPrice)],
+        data: [...datas.slice(36, 41).map((data) => data.usdPrice)],
         backgroundColor: "green",
         fill: false,
       },
