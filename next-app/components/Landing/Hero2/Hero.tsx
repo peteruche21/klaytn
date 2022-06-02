@@ -7,7 +7,7 @@ import Image from "next/image";
 interface IProps {
   title: string;
   summary: string;
-  image?: string;
+  image?: any;
 }
 function Hero({ title, summary, image }: IProps) {
   return (

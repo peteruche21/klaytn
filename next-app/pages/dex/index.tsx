@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import React, { useState, useEffect } from "react";
 import useStore from "../../store";
 
+import Footer from "../../components/Landing/Footer/Footer";
 import Hero2 from "../../components/Landing/Hero2/Hero";
 import Trends from "../../components/Trends";
 import Swap from "../../components/Dex/Swap";
@@ -27,15 +28,42 @@ const DEX: NextPage = () => {
       token: "BTC/USDC",
       price: "3920.97",
     },
+    {
+      token: "BTC/USDC",
+      price: "3920.97",
+    },
+    {
+      token: "BTC/USDC",
+      price: "3920.97",
+    },
+    {
+      token: "BTC/USDC",
+      price: "3920.97",
+    },
+    {
+      token: "BTC/USDC",
+      price: "3920.97",
+    },
+    {
+      token: "BTC/USDC",
+      price: "3920.97",
+    },
+    {
+      token: "BTC/USDC",
+      price: "3920.97",
+    },
   ];
+
+  const swapData = [{}];
   return (
     <div className="">
       <Hero2
-        title="Acend Wallet Tracker"
-        summary="See and Manage All your DE-Fi Assets Across Multiple Chains"
+        title="Acend DEX"
+        summary="Swap Coins and Tokens without boundries"
       />
       <Trends tokens={trendData} />
       <Swap />
+      <Footer />
     </div>
   );
 };

@@ -28,7 +28,7 @@ function LineGraph({ datas }) {
         label: "Hello",
         data: [...datas.slice(36, 41).map((data) => data.usdPrice)],
         backgroundColor: "green",
-        fill: false,
+        fill: true,
       },
     ],
   };

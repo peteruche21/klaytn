@@ -11,7 +11,7 @@ function Footer() {
         </div>
         <div className={style.right}>
           <div className={style.links}>
-            <h4> Features</h4>
+            <h4 className={style.header}> Features</h4>
             <ul className={style.lists}>
               <li> Acend Defi</li>
               <li> Acend Defi</li>
@@ -21,7 +21,7 @@ function Footer() {
             </ul>
           </div>
           <div className={style.links}>
-            <h4> Features</h4>
+            <h4 className={style.header}> Features</h4>
             <ul className={style.lists}>
               <li> Acend Defi</li>
               <li> Acend Defi</li>
@@ -37,7 +37,7 @@ function Footer() {
             </ul>
           </div>
           <div className={style.links}>
-            <h4> Features</h4>
+            <h4 className={style.header}> Features</h4>
             <ul className={style.lists}>
               <li> Acend Defi</li>
               <li> Acend Defi</li>

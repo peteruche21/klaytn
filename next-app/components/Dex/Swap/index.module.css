@@ -1,8 +1,10 @@
 .swap {
   background-color: var(--light-blue);
   max-width: max-content;
+  margin: 0 auto;
   border-radius: 15px;
   padding: 20px;
+  margin-bottom: 70px;
 }
 .title {
   font-weight: 600;
