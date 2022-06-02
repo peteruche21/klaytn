@@ -1,0 +1,33 @@
+.details {
+    padding: 5vw;
+    color: var(--black);
+}
+
+.details__Title {
+    font-size: 48px;
+    font-weight: 700px;
+    line-height: 50px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    text-transform: capitalize;
+}
+.details__Title span {
+    color: var(--blue);
+}
+.details__Summary {
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 56px;
+}
+.details__Lists {
+    margin-bottom: 50px;
+}
+.details__Lists li {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 24px;
+}
+.details__Lists li p {
+    margin-left: 20px;
+}

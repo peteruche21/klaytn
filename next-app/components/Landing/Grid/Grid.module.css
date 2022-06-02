@@ -1,0 +1,16 @@
+.grid {
+    max-width: 220px;
+    text-align: center;
+    margin: 20px 100px;
+}
+.title {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--black);
+}
+
+.about {
+    margin-top: 20px;
+    text-align: justify;
+}

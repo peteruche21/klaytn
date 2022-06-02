@@ -1,0 +1,40 @@
+.card {
+  background-color: var(--light-blue);
+  padding: 10px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  line-height: 27px;
+}
+
+.actionTime,
+.details,
+.token {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.details {
+  margin-bottom: 10px;
+}
+.token {
+  justify-content: flex-start;
+}
+.ethIcon {
+  margin-right: 10px;
+}
+.walletId {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.actionTime {
+  margin-bottom: 23px;
+}
+.action {
+  color: var(--green);
+}
+
+.from {
+  text-align: right;
+}

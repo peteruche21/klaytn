@@ -1,0 +1,39 @@
+.sponsor {
+    display: flex;
+    align-items: center;
+    padding: 140px 5vw;
+    color: var(--black);
+    background-color: var(--light-blue);
+}
+.left {
+    flex: 0.5;
+    text-align: center;
+}
+.left h4 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--blue);
+}
+.left h2 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+.right {
+    margin-left: 130px;
+}
+.right h4 {
+    font-size: 24px;
+    font-weight: 500;
+}
+.right ul {
+    margin-top: 20px;
+}
+.right ul li {
+    display: flex;
+    margin-top: 10px;
+}
+.right ul li p {
+    margin-left: 10px;
+    font-size: 18px;
+}
